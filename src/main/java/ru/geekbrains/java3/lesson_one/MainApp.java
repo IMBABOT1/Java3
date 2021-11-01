@@ -1,6 +1,7 @@
 package ru.geekbrains.java3.lesson_one;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class MainApp<T> {
 
@@ -12,5 +13,11 @@ public class MainApp<T> {
         swap.swap(ints, 0, 4);
 
         System.out.println(Arrays.toString(ints));
+
+        ConvertArray<String> convertArray = new ConvertArray<>();
+
+        List<String> list = convertArray.convertArray(new String[]{"s", "a", "q"});
+
+        System.out.println(list);
     }
 }
