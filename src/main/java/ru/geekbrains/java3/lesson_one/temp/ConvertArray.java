@@ -1,4 +1,4 @@
-package ru.geekbrains.java3.lesson_one;
+package ru.geekbrains.java3.lesson_one.temp;
 
 import java.util.Arrays;
 import java.util.List;
