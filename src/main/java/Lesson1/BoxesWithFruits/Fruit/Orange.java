@@ -1,4 +1,4 @@
-package ru.geekbrains.java3.lesson_one;
+package Lesson1.BoxesWithFruits.Fruit;
 
 public class Orange extends Fruit {
     public Orange() {
