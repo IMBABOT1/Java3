@@ -29,7 +29,7 @@ public class Box<T extends Fruit> implements Comparable<Box> {
         list.add(t);
     }
 
-    public void pourFruit(Box<? extends Fruit> box){
+    public void pourFruit(Box<? super T> box){
         if (this == box){
             return;
         }

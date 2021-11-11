@@ -18,7 +18,7 @@ public class Main {
         orangeBox.addFruit(new Orange());
         orangeBox.addFruit(new Orange());
 
-        orangeBox.pourFruit(appleBox);
+        orangeBox.pourFruit(orangeBox);
 
 
 
