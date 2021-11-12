@@ -28,6 +28,8 @@ public class MainClass {
         Car.getCdl().await();
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
 
+
+        Road.getCdl().await();
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
     }
 }
@@ -96,21 +98,27 @@ abstract class Stage {
 }
 class Road extends Stage {
 
+    public static CountDownLatch getCdl() {
+        return cdl;
+    }
+    private static CountDownLatch cdl = new CountDownLatch(8);
+
 
     public Road(int length) {
         this.length = length;
         this.description = "Дорога " + length + " метров";
     }
 
-
     @Override
-    public void go(Car c) {
+    public void go(Car c)   {
         try {
             System.out.println(c.getName() + " начал этап: " + description);
             Thread.sleep(length / c.getSpeed() * 1000);
             System.out.println(c.getName() + " закончил этап: " + description);
-        } catch (InterruptedException e) {
+        }catch (Exception e){
             e.printStackTrace();
+        }finally{
+            cdl.countDown();
         }
     }
 }
